@@ -41,7 +41,7 @@ class Controller {
             })
     
             tr.querySelector('.edit').addEventListener('click', () => {
-                 document.getElementById("formulario").classList.remove("hide")
+                 document.getElementById("new-prod").classList.remove("hide")
                 this.changeProductInStore(product)
             })
             this.view.renderStoreImport(total)
