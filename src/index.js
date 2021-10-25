@@ -12,6 +12,7 @@ window.addEventListener('load', () => {
   // función manejadora del formulario 'new-prod'
   document.getElementById('new-prod').addEventListener('submit', (event) => {
     event.preventDefault()
+     document.getElementById("productos").classList.add("hide")
 
     // Aquí el código para obtener los datos del formulario
     const id = document.getElementById('newprod-id').value
