@@ -43,4 +43,34 @@ window.addEventListener('load', () => {
     // ) 
   })
 
+  document.getElementById('new-prod').addEventListener('reset', (event) => {
+    event.preventDefault()
+
+    // Aquí el código para obtener los datos del formulario
+    const id = document.getElementById('newprod-id').value
+    let product = myController.store.findProduct(id)
+
+
+    // Aquí llamamos a la función del controlador que añade productos (addProductToStore)
+    // pasándole como parámetro esos datos
+    if(id == ""){
+      document.getElementById("newprod-id").value=""
+        document.getElementById('newprod-name').value=""
+        document.getElementById("newprod-price").value=""
+        document.getElementById("newprod-units").value=""
+    }else{
+      myController.changeProductInStore(product)
+    }
+
+     
+    // Sintaxis de ES2015 que equivale a 
+    //
+    // myController.addProductToStore(
+    //   { 
+    //     name: name,
+    //     price: price 
+    //   }
+    // ) 
+  })
+
 })
