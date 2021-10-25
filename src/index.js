@@ -22,7 +22,12 @@ window.addEventListener('load', () => {
     // Aquí llamamos a la función del controlador que añade productos (addProductToStore)
     // pasándole como parámetro esos datos
     if(id == ""){
-      myController.addProductToStore({ name:name, price:price, units:units })  
+      if(isNaN(units)){
+        myController.addProductToStore({ name:name, price:price, units:0 })  
+      }else{
+        myController.addProductToStore({ name:name, price:price, units:units})  
+      }
+      
     }else{
       myController.changeProductStock({id:id, name:name, price:price, units:units})
     }
